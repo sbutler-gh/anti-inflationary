@@ -70,6 +70,7 @@
       let ebike_investment_unit = 1000000000;
       let cepp_investment = 150;
       let cepp_investment_unit = 1000000000;
+      let displayPreview = true;
 </script>
 <svelte:head>
   <title>Anti-Inflationary US 🇺🇸</title>
@@ -97,8 +98,17 @@
 <h1>Anti-inflationary US 🇺🇸</h1>
 <p>The best policies for reversing inflation, balancing the federal books, and saving Americans money.</p>
 </div>
-
+<br>
 <section class="policies">
+  <div style="margin-left: auto; text-align: right; margin-right: 10px;">
+  <!-- <span style="background: rgb(229 229 229); border-radius: 10px; padding: 2px 5px;">Coming soon</span> -->
+  <select><option selected>Sort by $ saved</option><option disabled>More coming soon!</option></select>
+  <!-- {#if displayPreview}
+  <span style="display: block; width:fit-content; margin-left: auto; margin-bottom: 5px; background: #f9f9f9; border-radius: 10px; padding: 2px 5px">Coming soon</span>
+  {/if}
+  <select on:hover={function() {console.log('test');}} on:mouseleave={function() {console.log('test');}} disabled style="cursor: pointer;"><option selected>Sort by $ saved</option></select> -->
+</div>
+<br>
 <div class="policy">
   <h2>E-bike and bike rebates   <span style="vertical-align: sub; margin-left: 5px;"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
