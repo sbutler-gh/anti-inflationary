@@ -124,8 +124,8 @@
     <circle cx="17" cy="5" r="1" />
   </svg></span></h2>
   <p>Rebates towards the purchase of e-bikes, bicycles, and e-cargo bikes, which can be redeemed <strong>at time of purchase.</strong>  (If it's a deduction, people will be less likely to use the rebate, which limits the anti-inflationary benefits.)</p>
-  <h3>For every <span class="invested">$2000 invested</span>, e-bike and bike rebates return <span class="returns">$150,000 in savings</span> over a ten-year period.</h3>
-  <p>Investing $<input type="number" style="width: 40px" bind:value={ebike_investment}> <select bind:value={ebike_investment_unit}><option value={1000000}>million</option><option value={1000000000} selected>billion</option></select> into e-bike and bike rebates, generates <span class="returns">${(ebike_investment * 75 * ebike_investment_unit).toLocaleString()} in savings</span>.</p>
+  <h3>For every <span class="invested">$2000 invested</span>, e-bike and bike rebates return <span class="returns">$150,000 in returns</span> over a ten-year period.</h3>
+  <p>Investing $<input type="number" style="width: 40px" bind:value={ebike_investment}> <select bind:value={ebike_investment_unit}><option value={1000000}>million</option><option value={1000000000} selected>billion</option></select> into e-bike and bike rebates, generates <span class="returns">${(ebike_investment * 75 * ebike_investment_unit).toLocaleString()} in returns</span>.</p>
   <Chart data={bike_rebate_data} type="line" lineOptions={fill} colors={['green', 'purple']}/>
   <p>⚡ For the same amount of batteries used in one $70,000 electric truck, we can produce <strong>250+ electric bikes worth $1,000,000</strong>.</p>
 <ul style="list-style: circle; margin-left: 20px;">
@@ -161,10 +161,10 @@
 <div class="policy">
   <h2>Clean Electricity Performance Plan</h2>
   <p>Give money to utilities who increase renewable energy capacity, and fine utilities who fail to do so.</p>
-  <h3>For every <span class="invested">$150 billion invested</span>, the clean electricity performance plan returns <span class="returns">$432 billion in savings</span>.</h3>
+  <h3>For every <span class="invested">$150 billion invested</span>, the clean electricity performance plan returns <span class="returns">$432 billion in returns</span>.</h3>
   <h3>For every <span class="invested">$150 billion invested</span>, the clean electricity performance plan generates <span class="returns">$907 billion of economic value</span>.</h3>
   <p>Investing $<input type="number" style="width: 40px" bind:value={cepp_investment}>
-    <select bind:value={cepp_investment_unit}><option value={1000000000} selected disabled>billion</option></select> into a Clean Electricity Performance Plan generates <span class="returns">${(cepp_investment * 2.88 * cepp_investment_unit).toLocaleString()} in savings</span>.</p>
+    <select bind:value={cepp_investment_unit}><option value={1000000000} selected disabled>billion</option></select> into a Clean Electricity Performance Plan generates <span class="returns">${(cepp_investment * 2.88 * cepp_investment_unit).toLocaleString()} in returns</span>.</p>
   <p>⚡ The CEPP is the best way to meet our emission reduction goals, in line with our IPCC responsbilities.</p>
   <Chart data={cepp_data} type="line" lineOptions={fill} colors={['green', 'purple']}/>
   <p>Sources of data:</p>
