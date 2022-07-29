@@ -5,12 +5,13 @@
         labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         datasets: [
           {
-            values: ["0", "7000", "14000", "21000", "28000", "35000", "42000", "49000", "56000", "63000", "70000"],
+            name: "Returns",
+            values: ["0", "15000", "30000", "45000", "60000", "75000", "90000", "105000", "120000", "135000", "150000"],
             // values: [...Array((Math.ceil(payback_years)+4)).keys()].map(multiplySavingsKept),
             chartType: 'line',
             lineOptions: { regionFill: 1}
           },
-          {
+          { name: "Investment", 
             values: ["2000"],
           },
           // {
@@ -30,19 +31,23 @@
       let cepp_data = {
         labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         datasets: [
-          {
+          { name: "Returns",
             values: ["0", "24", "48", "72", "96", "120", "144", "168", "192", "216", "240"],
             // values: [...Array((Math.ceil(payback_years)+4)).keys()].map(multiplySavingsKept),
             chartType: 'line',
             lineOptions: { regionFill: 1}
           },
-          {
-            values: ["150"],
+          { name: "Investment",
+            values: ["0", "15", "30", "45", "60", "75", "90", "105", "120", "135", "150"],
           },
+          
           // {
           //   values: [cost_per_user],
           // }
         ],
+      //   tooltipOptions: [{
+      //       formatTooltipY: (d) => d + " pts"
+      // }]
         // yRegions: [{ label: "Region", start: 100, end: 4000 }],
         // yMarkers: [
         //       {
@@ -53,7 +58,11 @@
         //   ]
       };
 
-      let lineOptions =  {
+      let noFill =  {
+          regionFill: 0 // default: 0
+          }
+      
+          let fill =  {
           regionFill: 1 // default: 0
           }
 
@@ -62,6 +71,27 @@
       let cepp_investment = 150;
       let cepp_investment_unit = 1000000000;
 </script>
+<svelte:head>
+  <title>Anti-Inflationary US 🇺🇸</title>
+
+  
+  <meta name="description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
+  
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://sambutler.us/community-energy-vision/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Anti-Inflationary US 🇺🇸">
+  <meta property="og:description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
+  <meta property="og:image" content="/solar_shelter.jpeg">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="sambutler.us">
+  <meta property="twitter:url" content="https://antiinflationary.com">
+  <meta property="og:title" content="Anti-Inflationary US 🇺🇸">
+  <meta property="og:description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
+  <meta name="twitter:image" content="/solar_shelter.jpeg">
+</svelte:head>
 
 <div style="text-align: center;">
 <h1>Anti-inflationary US 🇺🇸</h1>
@@ -76,7 +106,7 @@
     <circle cx="19" cy="18" r="3" />
     <polyline points="12 19 12 15 9 12 14 8 16 11 19 11" />
     <circle cx="17" cy="5" r="1" />
-  </svg> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  </svg> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike hide-mobile" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
     <circle cx="5" cy="18" r="3" />
     <circle cx="19" cy="18" r="3" />
@@ -85,12 +115,12 @@
   </svg></span></h2>
   <p>Rebates towards the purchase of e-bikes, bicycles, and e-cargo bikes, which can be redeemed <strong>at time of purchase.</strong>  (If it's a deduction, people will be less likely to use the rebate, which limits the anti-inflationary benefits.)</p>
   <h3>For every <span class="invested">$2000 invested</span>, e-bike and bike rebates return <span class="returns">$150,000 in savings</span> over a ten-year period.</h3>
-  <p>Investing $<input type="number" style="width: 40px" bind:value={ebike_investment}> <select bind:value={ebike_investment_unit}><option value={1000000}>million</option><option value={1000000000} selected>billion</option></select> into e-bike and bike rebates, generates <span class="returns">${(ebike_investment * 150 * ebike_investment_unit).toLocaleString()} in savings</span>.</p>
-  <Chart data={bike_rebate_data} type="line" lineOptions={lineOptions} colors={['green', 'red']}/>
-  <p>⚡ For the same amount of battery that goes in a single electric truck sold for $70,000, we can produce +250 electric bikes sold for $1,000,000.</p>
+  <p>Investing $<input type="number" style="width: 40px" bind:value={ebike_investment}> <select bind:value={ebike_investment_unit}><option value={1000000}>million</option><option value={1000000000} selected>billion</option></select> into e-bike and bike rebates, generates <span class="returns">${(ebike_investment * 75 * ebike_investment_unit).toLocaleString()} in savings</span>.</p>
+  <Chart data={bike_rebate_data} type="line" lineOptions={fill} colors={['green', 'purple']}/>
+  <p>⚡ For the same amount of batteries used in one $70,000 electric truck, we can produce <strong>250+ electric bikes worth $1,000,000</strong>.</p>
 <ul style="list-style: circle; margin-left: 20px;">
   <li>
-      The F-150 Lightning battery weights <a href="https://fordauthority.com/2021/05/2022-ford-f-150-lightning-battery-reportedly-weighs-1800-pounds/">1,800 pounds</a>, while the average e-bike battery weighs <a href="https://www.sixthreezero.com/blogs/bike-advice/how-much-does-an-electric-battery-weigh-or-how-heavy-are-e-bike-batteries">7 pounds</a>.
+      The F-150 Lightning battery weighs <a href="https://fordauthority.com/2021/05/2022-ford-f-150-lightning-battery-reportedly-weighs-1800-pounds/">1,800 pounds</a>, compared to the average e-bike battery weight of <a href="https://www.sixthreezero.com/blogs/bike-advice/how-much-does-an-electric-battery-weigh-or-how-heavy-are-e-bike-batteries">7 pounds</a>.
     </li>
   </ul>
   <p>Sources of data:</p>
@@ -126,7 +156,7 @@
   <p>Investing $<input type="number" style="width: 40px" bind:value={cepp_investment}>
     <select bind:value={cepp_investment_unit}><option value={1000000000} selected disabled>billion</option></select> into a Clean Electricity Performance Plan generates <span class="returns">${(cepp_investment * 2.4 * cepp_investment_unit).toLocaleString()} in savings</span>.</p>
   <p>⚡ The CEPP is the best way to meet our emission reduction goals, in line with our IPCC responsbilities.</p>
-  <Chart data={cepp_data} type="line" lineOptions={lineOptions} colors={['green', 'red']}/>
+  <Chart data={cepp_data} type="line" lineOptions={fill} colors={['green', 'purple']}/>
   <p>Sources of data:</p>
   <ul>
     <li>The $150B clean electricity performance plan would inject $907 billion into the U.S. economy and raise $154 billion in tax revenue for federal, state, and local governments. <a href="https://www.nrdc.org/media/2021/210909">Source</a>.
@@ -168,9 +198,17 @@
     margin: auto;
   }
 
+  @media only screen and (min-width: 801px) {
   .policies {
     padding: 10px;
   }
+}
+
+@media only screen and (max-width: 800px) {
+  .hide-mobile {
+    display: none;
+  }
+}
 
   h2 {
     margin-top: 0px;
