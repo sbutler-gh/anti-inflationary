@@ -73,25 +73,25 @@
       let displayPreview = true;
 </script>
 <svelte:head>
-  <title>Anti-Inflationary US 🇺🇸</title>
+  <title>Anti-inflationary US 🇺🇸</title>
 
   
   <meta name="description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
   
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://sambutler.us/community-energy-vision/">
+  <meta property="og:url" content="https://antiinflationary.com">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Anti-Inflationary US 🇺🇸">
+  <meta property="og:title" content="Anti-inflationary US 🇺🇸">
   <meta property="og:description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
-  <meta property="og:image" content="/solar_shelter.jpeg">
+  <meta property="og:image" content="https://i.imgur.com/bnmncbC.png">
   
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="sambutler.us">
   <meta property="twitter:url" content="https://antiinflationary.com">
-  <meta property="og:title" content="Anti-Inflationary US 🇺🇸">
+  <meta property="og:title" content="Anti-inflationary US 🇺🇸">
   <meta property="og:description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
-  <meta name="twitter:image" content="/solar_shelter.jpeg">
+  <meta name="twitter:image" content="https://i.imgur.com/bnmncbC.png">
 </svelte:head>
 
 <div style="text-align: center;">
