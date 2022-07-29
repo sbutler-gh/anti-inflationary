@@ -161,15 +161,15 @@
 <div class="policy">
   <h2>Clean Electricity Performance Plan</h2>
   <p>Give money to utilities who increase renewable energy capacity, and fine utilities who fail to do so.</p>
-  <h3>For every <span class="invested">$1 billion invested</span>, the clean electricity performance plan returns <span class="returns">$2.4 billion in savings</span>.</h3>
-  <h3>For every <span class="invested">$1 billion invested</span>, the clean electricity performance plan generates <span class="returns">$6 billion of economic value</span>.</h3>
+  <h3>For every <span class="invested">$150 billion invested</span>, the clean electricity performance plan returns <span class="returns">$432 billion in savings</span>.</h3>
+  <h3>For every <span class="invested">$150 billion invested</span>, the clean electricity performance plan generates <span class="returns">$907 billion of economic value</span>.</h3>
   <p>Investing $<input type="number" style="width: 40px" bind:value={cepp_investment}>
-    <select bind:value={cepp_investment_unit}><option value={1000000000} selected disabled>billion</option></select> into a Clean Electricity Performance Plan generates <span class="returns">${(cepp_investment * 2.4 * cepp_investment_unit).toLocaleString()} in savings</span>.</p>
+    <select bind:value={cepp_investment_unit}><option value={1000000000} selected disabled>billion</option></select> into a Clean Electricity Performance Plan generates <span class="returns">${(cepp_investment * 2.88 * cepp_investment_unit).toLocaleString()} in savings</span>.</p>
   <p>⚡ The CEPP is the best way to meet our emission reduction goals, in line with our IPCC responsbilities.</p>
   <Chart data={cepp_data} type="line" lineOptions={fill} colors={['green', 'purple']}/>
   <p>Sources of data:</p>
   <ul>
-    <li>The $150B clean electricity performance plan would inject $907 billion into the U.S. economy and raise $154 billion in tax revenue for federal, state, and local governments. <a href="https://www.nrdc.org/media/2021/210909">Source</a>.
+    <li>The $150 billion clean electricity performance plan would inject $907 billion into the U.S. economy and raise $154 billion in tax revenue for federal, state, and local governments. <a href="https://www.nrdc.org/media/2021/210909">Source</a>.
       <!-- <ul>
         <li>For X drivers in the USA, that is X per year.</li>
       </ul> -->
@@ -184,7 +184,7 @@
         <li>Across the USA, that is X per year.</li>
       </ul> -->
     </li>
-    <li>With Americans expected to pay $556 billion in electricity costs in 2022, a 5% reduction means $27,807,000,000 in savings per year.  That is $278 billion in savings over a ten-year period, for a policy that costs $150 billion.
+    <li>With Americans expected to pay $556 billion in electricity costs in 2022, a 5% reduction means $27,807,000,000 in savings per year.  That is $278 billion in savings plus $154 billion in tax revnue, totaling $432 billion in returns over a ten-year period — for an investment that costs $150 billion.
       <!-- <ul>
         <li>For X drivers in the USA, that is X per year.</li>
       </ul> -->
