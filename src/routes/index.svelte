@@ -32,7 +32,7 @@
         labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         datasets: [
           { name: "Returns",
-            values: ["0", "24", "48", "72", "96", "120", "144", "168", "192", "216", "240"],
+            values: ["0", "42", "84", "126", "168", "210", "252", "294", "336", "378", "420"],
             // values: [...Array((Math.ceil(payback_years)+4)).keys()].map(multiplySavingsKept),
             chartType: 'line',
             lineOptions: { regionFill: 1}
