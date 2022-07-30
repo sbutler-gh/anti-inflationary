@@ -257,7 +257,7 @@
   <p><a href="https://docs.google.com/document/d/1w_QEqDER7GEi8Q8rOy1_RiOuT-iDZ7w20zgDESm8HSs/edit?usp=sharing">Add policies, edits, and suggestions</a>.</p>
   <hr>
   <p><a href="https://twitter.com/sambutlerUS">Twitter</p>
-    <p>antiinflationary@sambutler.us</p>
+    <p>put-it-in-the-bill@antiinflationary.com</p>
 </section>
 
 <style>
