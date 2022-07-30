@@ -1,19 +1,38 @@
 <script>
         import Chart from 'svelte-frappe-charts';
 
+        function multiplyBikeTransit(input) {
+          return Math.floor(input * 6.02);
+      }
+
+      // function multiplyBikeTransit(input) {
+      //     return Math.floor(input * -0.556);
+      // }
+
+      // function multiplyCarTransit(input) {
+      //     return Math.floor(input * -33);
+      // }
+
         let bike_rebate_data = {
         labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         datasets: [
           {
             name: "Returns",
-            values: ["0", "15000", "30000", "45000", "60000", "75000", "90000", "105000", "120000", "135000", "150000"],
-            // values: [...Array((Math.ceil(payback_years)+4)).keys()].map(multiplySavingsKept),
+            // values: ["0", "15000", "30000", "45000", "60000", "75000", "90000", "105000", "120000", "135000", "150000"],
+            values: [...Array((11)).keys()].map(multiplyBikeTransit),
             chartType: 'line',
             lineOptions: { regionFill: 1}
           },
           { name: "Investment", 
-            values: ["2000"],
+            values: [...Array((11)).keys()]
           },
+          // {
+          //   name: "Car",
+          //   // values: ["0", "15000", "30000", "45000", "60000", "75000", "90000", "105000", "120000", "135000", "150000"],
+          //   values: [...Array((11)).keys()].map(multiplyCarTransit),
+          //   chartType: 'line',
+          //   lineOptions: { regionFill: 1}
+          // },
           // {
           //   values: [cost_per_user],
           // }
@@ -102,7 +121,7 @@
 <section class="policies">
   <div style="margin-left: auto; text-align: right; margin-right: 10px;">
   <!-- <span style="background: rgb(229 229 229); border-radius: 10px; padding: 2px 5px;">Coming soon</span> -->
-  <select><option selected>Sort by $ saved</option><option disabled>More coming soon!</option></select>
+  <select><option selected>Sort by $ returned</option><option disabled>More coming soon!</option></select>
   <!-- {#if displayPreview}
   <span style="display: block; width:fit-content; margin-left: auto; margin-bottom: 5px; background: #f9f9f9; border-radius: 10px; padding: 2px 5px">Coming soon</span>
   {/if}
@@ -110,30 +129,71 @@
 </div>
 <br>
 <div class="policy">
-  <h2>E-bike and bike rebates   <span style="vertical-align: sub; margin-left: 5px;"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <h2>Bike and transit infrastructure + E-bike/bike rebates<span style="vertical-align: sub; margin-left: 7px;"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-train" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M21 13c0 -3.87 -3.37 -7 -10 -7h-8" />
+    <path d="M3 15h16a2 2 0 0 0 2 -2" />
+    <path d="M3 6v5h17.5" />
+    <line x1="3" y1="10" x2="3" y2="14" />
+    <line x1="8" y1="11" x2="8" y2="6" />
+    <line x1="13" y1="11" x2="13" y2="6.5" />
+    <line x1="3" y1="19" x2="21" y2="19" />
+  </svg><svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px" class="icon icon-tabler icon-tabler-bike" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
     <circle cx="5" cy="18" r="3" />
     <circle cx="19" cy="18" r="3" />
     <polyline points="12 19 12 15 9 12 14 8 16 11 19 11" />
     <circle cx="17" cy="5" r="1" />
-  </svg> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike hide-mobile" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  </svg>
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bike hide-mobile" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
     <circle cx="5" cy="18" r="3" />
     <circle cx="19" cy="18" r="3" />
     <polyline points="12 19 12 15 9 12 14 8 16 11 19 11" />
     <circle cx="17" cy="5" r="1" />
-  </svg></span></h2>
-  <p>Rebates towards the purchase of e-bikes, bicycles, and e-cargo bikes, which can be redeemed <strong>at time of purchase.</strong>  (If it's a deduction, people will be less likely to use the rebate, which limits the anti-inflationary benefits.)</p>
-  <h3>For every <span class="invested">$2000 invested</span>, e-bike and bike rebates return <span class="returns">$150,000 in returns</span> over a ten-year period.</h3>
-  <p>Investing $<input type="number" style="width: 40px" bind:value={ebike_investment}> <select bind:value={ebike_investment_unit}><option value={1000000}>million</option><option value={1000000000} selected>billion</option></select> into e-bike and bike rebates, generates <span class="returns">${(ebike_investment * 75 * ebike_investment_unit).toLocaleString()} in returns</span>.</p>
-  <Chart data={bike_rebate_data} type="line" lineOptions={fill} colors={['green', 'purple']}/>
-  <p>⚡ For the same amount of batteries used in one $70,000 electric truck, we can produce <strong>250+ electric bikes worth $1,000,000</strong>.</p>
+  </svg> -->
+</span></h2>
+  <p>Invest in bicyle and transit infrastructure, and invest in rebates for e-bikes/bikes/cargo bikes <em>redeemed at time of purchase.</em>  (If it's a deduction, people will be less likely to use the rebate, which limits the anti-inflationary benefits.)</p>
+  <h3>For every <span class="invested">$1 billion invested</span>, this policy generates <span class="returns">$6.02 billion in returns</span>.</h3>
+  <p>Investing $<input type="number" style="width: 40px" bind:value={ebike_investment}> <select bind:value={ebike_investment_unit}><option value={1000000}>million</option><option value={1000000000} selected>billion</option></select> into this policy generates <span class="returns">${(ebike_investment * 6.02 * ebike_investment_unit).toLocaleString()} in returns</span>.</p>
+  <Chart data={bike_rebate_data} type="line" lineOptions={fill} colors={['green', 'purple', 'red']}/>
+  <!-- <p>⚡ For the same amount of batteries used in one $70,000 electric truck, we can produce <strong>250+ electric bikes worth $1,000,000</strong>.</p>
 <ul style="list-style: circle; margin-left: 20px;">
   <li>
       The F-150 Lightning battery weighs <a href="https://fordauthority.com/2021/05/2022-ford-f-150-lightning-battery-reportedly-weighs-1800-pounds/">1,800 pounds</a>, compared to the average e-bike battery weight of <a href="https://www.sixthreezero.com/blogs/bike-advice/how-much-does-an-electric-battery-weigh-or-how-heavy-are-e-bike-batteries">7 pounds</a>.
     </li>
+  </ul> -->
+  <p>Calculations</p>
+
+  <ul>
+  <li><strong>Costs of car infrastructure</strong>
+  <ul>
+    <li>According to a <a href="https://news.harvard.edu/gazette/story/2020/01/massachusetts-car-economy-costs-64-billion-study-finds/#:~:text=A%20team%20of%20graduate%20students,that%20coming%20from%20public%20funds.">2019 study by Harvard</a>, the public cost of maintaining the car economy costs $14,000 per household per year, and the private car of ownership is $12,000 per household (about $6,000 per vehicle) per year.</li>
+    <li>There are 123 million households in the United States, putting the total public cost of maintaining the car economy at $1.72 trillion per year (123 million households * $14,000 per household per year).</li>
+    <li>There are 272 million private cars in the United States, putting the total private cost of car ownership at $1.63 trillion per year (272 million cars * $6,000 per vehicle per year).</li>
+    <li>Together, the total cost of maintaining the car economy in the United States is $3.35 trillion per year.</li>
   </ul>
-  <p>Sources of data:</p>
+  </li>
+
+  <li><strong>Costs of bike infrastructure</strong>
+  <ul>
+    <li>In Utretcht, one of the world's most bike-oriented cities, the total public cost of maintaining cycling infrastructure is <a href="https://www.bloomberg.com/news/articles/2019-07-05/how-the-dutch-made-utrecht-a-bicycle-first-city">$55 million per year</a> — or $150 per person per capita.  (This is a conservative cost estimate — across the Netherlands as a whole, the cost for maintaining cycling infrastructure is $30 per person per year.)</li>
+    <li>The annual cost of e-bike/bike/cargo bike ownership and maintenance, including the cost of purchase, is up to <a href="https://www.bicycling.com/rides/a20024531/how-much-do-you-spend-on-cycling-gear-every-year/">$500 per person per year</a>.  (Assuming a price of $2,000 and annual maintenance costs of $300).</li>
+    <li>With 330 million people in the United States, the annual cost of maintaining a bike-centric infrastructure is $214.5 billion. (330 million * $150 public costs) + (330 million * $500 private costs)</li>
+  </ul>
+  </li>
+
+  <li><strong>Costs of transit infrastructure</strong>
+  <ul>
+    <li>In King County, Washington, home to 2.22 million people, the total operating cost of public transit (including buses, streetcars, and lightrail) is $2.3 billion per yer — $1.9 billion in annual operating costs, and $400 million in annual capital expenditures.</li>
+    <li>King County spends $1,036 per capita per year on public transit.</li>
+    <li>With 330 million people in the United States, the annual cost of maintaining transit infrastructure is $341.9 billion per year.</li>
+  </ul>
+  </li>
+  
+  <li>All together, the cost of bike and transit infrastucture in the United States is <strong>$556.4 billion per year</strong> ($214.5 billion for bike infrastructure + $341.9 billion for transit infrastructure).</li>
+</ul>
+  <!-- <p>Sources of data:</p>
   <ul>
     <li>The average cost of owning a car is <a href="https://www.nerdwallet.com/article/loans/auto-loans/total-cost-owning-car">$9,666 per year</a>.
       <ul>
@@ -155,7 +215,7 @@
     <li>With 130 million commuters in the US, we can save $15,000 every year for each commuter that transitions from cars to bikes.</li>
     <li>If an e-bike rebate costs $2000 per commuter, over a ten-year period, that is approximately $150,000 in savings generated by each rebate.
     </li>
-  </ul>
+  </ul> -->
 </div>
 <br>
 <div class="policy">
