@@ -102,7 +102,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Anti-inflationary US 🇺🇸">
   <meta property="og:description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
-  <meta property="og:image" content="https://i.imgur.com/bnmncbC.png">
+  <meta property="og:image" content="https://i.imgur.com/qqfXaVO.png">
   
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -110,7 +110,7 @@
   <meta property="twitter:url" content="https://antiinflationary.com">
   <meta property="og:title" content="Anti-inflationary US 🇺🇸">
   <meta property="og:description" content="The best policies for reversing inflation, balancing the federal books, and saving Americans money.">
-  <meta name="twitter:image" content="https://i.imgur.com/bnmncbC.png">
+  <meta name="twitter:image" content="https://i.imgur.com/qqfXaVO.png">
 </svelte:head>
 
 <div style="text-align: center;">
@@ -121,7 +121,7 @@
 <section class="policies">
   <div style="margin-left: auto; text-align: right; margin-right: 10px;">
   <!-- <span style="background: rgb(229 229 229); border-radius: 10px; padding: 2px 5px;">Coming soon</span> -->
-  <select><option selected>Sort by $ returned</option><option disabled>More coming soon!</option></select>
+  <select><option selected>Sort by $ saved</option><option disabled>More coming soon!</option></select>
   <!-- {#if displayPreview}
   <span style="display: block; width:fit-content; margin-left: auto; margin-bottom: 5px; background: #f9f9f9; border-radius: 10px; padding: 2px 5px">Coming soon</span>
   {/if}
@@ -163,7 +163,7 @@
       The F-150 Lightning battery weighs <a href="https://fordauthority.com/2021/05/2022-ford-f-150-lightning-battery-reportedly-weighs-1800-pounds/">1,800 pounds</a>, compared to the average e-bike battery weight of <a href="https://www.sixthreezero.com/blogs/bike-advice/how-much-does-an-electric-battery-weigh-or-how-heavy-are-e-bike-batteries">7 pounds</a>.
     </li>
   </ul> -->
-  <p>Calculations</p>
+  <p>Calculations and sources</p>
 
   <ul>
   <li><strong>Costs of car infrastructure</strong>
@@ -171,7 +171,7 @@
     <li>According to a <a href="https://news.harvard.edu/gazette/story/2020/01/massachusetts-car-economy-costs-64-billion-study-finds/#:~:text=A%20team%20of%20graduate%20students,that%20coming%20from%20public%20funds.">2019 study by Harvard</a>, the public cost of maintaining the car economy costs $14,000 per household per year, and the private car of ownership is $12,000 per household (about $6,000 per vehicle) per year.</li>
     <li>There are 123 million households in the United States, putting the total public cost of maintaining the car economy at $1.72 trillion per year (123 million households * $14,000 per household per year).</li>
     <li>There are 272 million private cars in the United States, putting the total private cost of car ownership at $1.63 trillion per year (272 million cars * $6,000 per vehicle per year).</li>
-    <li>Together, the total cost of maintaining the car economy in the United States is $3.35 trillion per year.</li>
+    <li>Together, the total cost of maintaining the car economy in the United States is <strong>$3.35 trillion per year</strong>.</li>
   </ul>
   </li>
 
@@ -227,7 +227,7 @@
     <select bind:value={cepp_investment_unit}><option value={1000000000} selected disabled>billion</option></select> into a Clean Electricity Performance Plan generates <span class="returns">${(cepp_investment * 2.88 * cepp_investment_unit).toLocaleString()} in returns</span>.</p>
   <p>⚡ The CEPP is the best way to meet our emission reduction goals, in line with our IPCC responsibilities.</p>
   <Chart data={cepp_data} type="line" lineOptions={fill} colors={['green', 'purple']}/>
-  <p>Sources of data:</p>
+  <p>Calculations and sources</p>
   <ul>
     <li>The $150 billion clean electricity performance plan would inject $907 billion into the U.S. economy and raise $154 billion in tax revenue for federal, state, and local governments. <a href="https://www.nrdc.org/media/2021/210909">Source</a>.
       <!-- <ul>
